@@ -1,4 +1,5 @@
 /*jshint node:true */
+/* s0ber's fork, which ignores gulp's files, and let karma to use files, specified in karma.conf.js */
 
 'use strict';
 
@@ -63,6 +64,7 @@ var karmaPlugin = function(options) {
 
   function startKarmaServer() {
     gutil.log('Starting Karma server...');
+    delete options.files;
 
     // Start the server
     child = spawn(
